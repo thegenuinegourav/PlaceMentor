@@ -1,0 +1,28 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+              
+                <%= link_to "PlaceMentor","", class: "navbar-brand page-scroll" %>
+            </div>
+
+            <form id="signin" class="navbar-form navbar-right" role="form">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" style="border:1px solid #EE4B28" type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="password" style="border:1px solid #EE4B28" type="password" class="form-control" name="password" value="" placeholder="Password">                                        
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
