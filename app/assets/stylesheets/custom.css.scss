@@ -37,3 +37,30 @@
 .explore a {color: green; font-size: 13px;font-weight: 600}
 .twitter a {color:#4099FF}
 .img-box{box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);border-radius: 2px;border: 0;}
+
+
+input,textarea,select,uneditable-input {
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input_checkbox input {
+    width: auto !important;
+}
+
+input {
+    height: auto !important;
+}
+
+span.picture {
+    margin-top: 10px;
+    input {
+        border: 0;
+    }
+}
+
+.show_recipe {
+    margin: 10px 0px 10px 10px;
+}

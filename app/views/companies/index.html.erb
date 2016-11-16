@@ -2,9 +2,9 @@
     <%= render 'layouts/navigationWithoutLogin' %>
 </div>
 
-<div style="background-color: #55423E">
+<div style="background-image: url('/assets/header.jpg'">
     
-    <div style="padding-top: 50px;"></div>
+<div style="padding-top: 50px;"></div>
 
 <% @companies.each do |company| %>
     
@@ -13,23 +13,21 @@
 		<div class="row"> 
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <a href="#">
-                            <img src="" class="img-responsive img-box img-thumbnail"> 
+                            <%= image_tag(company.picture.url,size: "250x250", class: "gravatar img-responsive img-box img-thumbnail") if company.picture? %>
                         </a>
                     </div> 
                     <div class="col-xs-12 col-sm-9 col-md-9">
                         <div class="list-group">
                             <div class="list-group-item">
                                 <div class="row-picture">
-                                    <a href="#" title="sintret">
-                                        <img class="circle img-thumbnail img-box" src="http://sintret.com/img/andy.jpg" alt="sintret">
-                                    </a>
+                                    <%= gravatar_for company.user, size: 100 %>
                                 </div>
                                 <div class="row-content">
                                     <div class="list-group-item-heading">
-                                        <%= link_to company.companyname,"" %>
+                                        <%= link_to company.companyname,company_path(company) %>
                                     </div>
                                     <small>
-                                        <i class="glyphicon glyphicon-calendar"></i> Arriving on <%= company.date %> <span class="twitter"> </span>
+                                        <i class="glyphicon glyphicon-calendar"></i> Arriving on <%= company.date %> 
                                         <br>
                                         <span class="explore"><i class="glyphicon glyphicon-th"></i> <a href="#">Package: <%= company.package %> lpa </a></span>
                                     </small>

@@ -1,0 +1,26 @@
+<%= render 'shared/errors', obj: @company %>
+
+<div class="row">
+    <div class = "col-md-6 col-md-offset-3 well" style="background-color: rgba(245, 245, 245, 0.3);">
+        <%= form_for(@company, html: { multipart: true }) do |f| %>
+         <%= f.label :companyName %>  <%= f.text_field :companyname %>
+         <%= f.label :date %>  <%= f.date_select(:date, :order => [:month, :day, :year]) %>
+         <%= f.label :location %>  <%= f.text_field :location %>
+         <%= f.label :package %>  <%= f.number_field :package, :step => "0.01" %>
+         <%= f.label :description %>  <%= f.text_area :description ,rows: 10%>
+        <span class="picture">
+            <%= f.file_field :picture,accept: 'image/jpeg,image/png,image/gif' %>
+         </span>
+        <%= f.submit(@company.new_record? ? 'Create Company' : 'Edit Company',class: "btn btn-warning") %>
+        <% end %>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#company_picture').bind('change',function() {
+        size_in_megabytes=this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+            alert('Maximum file size is 5MB. Please choose a smaller file');
+        }
+    });
+</script> 

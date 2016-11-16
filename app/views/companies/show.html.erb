@@ -1,0 +1,39 @@
+<div style="padding-top: 50px;">
+    <%= render 'layouts/navigationWithoutLogin' %>
+</div>
+
+<header>
+    <div class="container">
+        <div class="row" style="color: white;margin-bottom: 50px">
+            <strong><h1 class="text-center" ><%= @company.companyname %></h1></strong>
+            <%= link_to "Edit this info",edit_company_path(@company), class: "btn btn-danger pull-right" %>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <%= image_tag(@company.picture.url,size: "400x400",class: "gravatar img-responsive img-circle") if @company.picture? %>
+            </div>
+            
+            <div class="col-sm-1"></div>
+           
+            <div class="col-sm-5" style="margin-top: 5px; margin-bottom:5px">
+                <div class="row well" style="background-color: rgba(245, 245, 245, 0);"><i class="glyphicon glyphicon-calendar"></i>Arriving on <%= @company.date %></div>
+                <div class="row well" style="background-color: rgba(245, 245, 245, 0);"><i class="glyphicon glyphicon-th"></i>Package: <%= @company.package %> lakhs per annum</div>
+                <div class="row well" style="background-color: rgba(245, 245, 245, 0);"><i class="glyphicon glyphicon-road"></i>For <%= @company.date %> Branch only</div>
+                <div class="row well" style="background-color: rgba(245, 245, 245, 0);"><i class="glyphicon glyphicon-map-marker"></i>Location: <%= @company.location %></div>
+            </div>
+    
+             
+        </div>
+        
+        <div class="row" style="margin-top: 50px">
+            <div class="col-sm-12">
+                <em><h3 style="word-wrap: break-word; color: #ffffff"><%= simple_format(@company.description) %></h3></em>
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+    
+        
+</header>
