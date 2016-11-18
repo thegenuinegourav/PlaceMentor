@@ -2,7 +2,7 @@ require 'mini_magick'
 class CompaniesController < ApplicationController
    
    def index
-      @companies = Company.all
+      @companies = Company.paginate(page: params[:page],per_page: 3)
    end
    
    def show

@@ -9,6 +9,8 @@ class Company < ActiveRecord::Base
     mount_uploader :picture, PictureUploader
     validate :picture_size
     
+     default_scope -> { order(updated_at: :desc) }
+    
     def count_one_stars
       self.likes.where(like: 1).size
     end

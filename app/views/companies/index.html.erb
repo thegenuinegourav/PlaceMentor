@@ -7,7 +7,7 @@
 <div style="padding-top: 50px;"></div>
 
 <% @companies.each do |company| %>
-    
+
 <div class="container well">
 	<div class="row">
 		<div class="row"> 
@@ -80,6 +80,10 @@
 </div>
 
 <% end %>
+
+<div class="pagniation-wrapper"> 
+  <%= will_paginate %> 
+</div>
 
 <div style="padding-top: 50px;"></div>
 
