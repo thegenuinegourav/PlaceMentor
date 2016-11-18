@@ -4,12 +4,37 @@
 
 <header>
     <div class="container">
-        <div class="row" style="color: white;margin-bottom: 50px">
-            <strong><h1 class="text-center" ><%= @company.companyname %></h1></strong>
+        <div class="row " style="color: white;margin-bottom: 20px">
+            <strong><h1 class="text-center" style="font-size: 50px; margin-bottom: 20px;" ><%= @company.companyname %></h1></strong>
+            <div class="pull-left">
+                <span class="btn btn-warning img-thumbnail" style="font-size: 12px; margin-right: 20px;margin-top: 25px">Rated: <%= @company.rating.round(2) %></span>
+            </div>
+            <div class="pull-left rating">
+                <%= link_to like_company_path(@company, like: 5), method: :post do %>
+                    &#9734;
+                <% end %>
+                
+               <%= link_to like_company_path(@company, like: 4), method: :post do %>
+                    &#9734;
+                <% end %>
+                
+              <%= link_to like_company_path(@company, like: 3), method: :post do %>
+                    &#9734;
+                <% end %>
+             
+               <%= link_to like_company_path(@company, like: 2), method: :post do %>
+                    &#9734; 
+                <% end %>
+               
+                <%= link_to like_company_path(@company, like: 1), method: :post do %>
+                    &#9734;
+                <% end %>
+             
+            </div>
             <%= link_to "Edit this info",edit_company_path(@company), class: "btn btn-danger pull-right" %>
         </div>
         
-        <div class="row">
+        <div class="row" style="margin-top: 30px">
             <div class="col-sm-6">
                 <%= image_tag(@company.picture.url,size: "400x400",class: "gravatar img-responsive img-circle") if @company.picture? %>
             </div>
@@ -26,7 +51,7 @@
              
         </div>
         
-        <div class="row" style="margin-top: 50px">
+        <div class="row" style="margin-top: 1px">
             <div class="col-sm-12">
                 <em><h3 style="word-wrap: break-word; color: #ffffff"><%= simple_format(@company.description) %></h3></em>
             </div>

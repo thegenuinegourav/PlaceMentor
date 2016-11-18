@@ -2,7 +2,7 @@ require 'mini_magick'
 class CompaniesController < ApplicationController
    
    def index
-      @companies = Company.all 
+      @companies = Company.all
    end
    
    def show
@@ -38,6 +38,17 @@ class CompaniesController < ApplicationController
       else
          render :edit
       end
+   end
+   
+   def like
+      @company = Company.find(params[:id])
+      like = Like.create(like: params[:like], user: User.first, company: @company)
+      if like.valid?
+         flash[:success] = "You reviewed this company!"
+      else 
+         flash[:danger] = "You can only reviewed this company once!"
+      end
+      redirect_to :back
    end
    
    private

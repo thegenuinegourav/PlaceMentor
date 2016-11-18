@@ -17,6 +17,42 @@
                         </a>
                     </div> 
                     <div class="col-xs-12 col-sm-9 col-md-9">
+                        <div class="pull-right" style="margin-right: 7px; color: #FF4500">
+                            <% case company.rating.round(2)  %>
+                                <% when 1...2 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                <% when 2...3 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                <% when 3...4 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                <% when 4...5 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 20px;"></i>
+                                <% when 5 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 20px;"></i>
+                                <% else %>
+                                    Not Rated Yet
+                            <% end %>
+                        </div>
                         <div class="list-group">
                             <div class="list-group-item">
                                 <div class="row-picture">
