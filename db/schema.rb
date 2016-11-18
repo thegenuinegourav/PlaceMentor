@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118081337) do
+ActiveRecord::Schema.define(version: 20161118133605) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "companyname"
@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20161118081337) do
     t.string   "username"
     t.string   "email"
     t.string   "phone"
-    t.boolean  "admin",      default: false
+    t.boolean  "admin",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end
