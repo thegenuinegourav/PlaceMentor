@@ -20,12 +20,6 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-#config/database.yml
 production:
-  adapter: postgresql
-  encoding: utf8
-  database: your_database_name
-  pool: 5
-  username: postgres_username
-  password: postgres_password
-  host: 127.0.0.1
+  <<: *default
+  database: db/production.sqlite3
