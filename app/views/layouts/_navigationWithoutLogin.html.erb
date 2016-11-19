@@ -2,13 +2,39 @@
         <div class="container-fluid" style="background-image: url('/assets/header.jpg'">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-              
-                <%= link_to "PlaceMentor","", class: "navbar-brand page-scroll" %>
+                
+                  
+                <%= link_to "PlaceMentor",home_path, class: "navbar-brand page-scroll" %>
+                
+                
             </div>
-
+          
+            <% if logged_in? %>
+            
+                <div  class="nav_item">
+                    <%= link_to "[ New Company Visiting? ]",new_company_path,class: "navbar-brand pull-left verticalLine hovering", :style=> "margin-left: 10px; color: #F05F40;font-weight:bold" %>
+                </div>
+                
+                <ul class="nav_item">
+                    <li class="dropdown">
+                      <%= link_to '#',class: "navbar-brand pull-right dropdown-toggle verticalLine hovering", "data-toggle" => "dropdown", :style=>"margin-right: 1px; color: #F05F40;font-weight:bold" do %>
+                        <%= current_user.username %> <b class="caret"></b>
+                      <% end %>
+                        <ul class='dropdown-menu pull-right'>
+                            <li><%= link_to "View Profile",user_path(current_user) %></li>
+                            <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to "Logout",logout_path %></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                
+            <% end %>
+            
+            
+            
+            
             
             <!-- /.navbar-collapse -->
         </div>

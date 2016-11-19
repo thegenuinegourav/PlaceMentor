@@ -1,0 +1,71 @@
+<div style="padding-top: 50px;">
+    <%= render 'layouts/navigationWithoutLogin' %>
+</div>
+
+<header>
+    <div class="container">
+        <div class="row" style="color: white">
+            <h1 class="text-center"><%= @user.username %></h1>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-3 well" style="background-color: rgba(244, 128, 36, 0.1); color: orange">
+                Email: <%= @user.email %>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4 well" style="background-color: rgba(244, 128, 36, 0.1); color: orange">
+                Phone: <%= @user.phone %>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 well" style="background-color: rgba(244, 128, 36, 0.1); color: orange">
+                Branch: <%= @user.email %>
+            </div>
+        </div>
+        <br><br>
+        <% if @user.companies.any? %>
+        <div class="row">
+            <h3 class="pull-left"><em>Companies brought to you by <%= @user.username %> : </em></h3>
+        </div>
+        <br>
+        <div class="row">
+        <% @user.companies.each do |company| %>
+            <div class="container well" style="background-color: rgba(245, 245, 245, 0);">
+	            <div class="row">
+		            <div class="row"> 
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <a href="#">
+                                <%= image_tag(company.picture.url,size: "250x250", class: "gravatar img-responsive img-box img-thumbnail") if company.picture? %>
+                            </a>
+                        </div> 
+                        <div class="col-xs-12 col-sm-9 col-md-9">
+                            <div class="pull-right btn btn-danger" style="margin-right: 7px; color: white">
+                                <h6>Rated: <%= company.rating.round(2)  %></h6>
+                            </div>
+                            <div class="list-group">
+                                <div class="list-group-item">
+                                    <div class="row-content">
+                                        <div class="list-group-item-heading ">
+                                            <%= link_to company.companyname,company_path(company) %>
+                                        </div>
+                                        <small>
+                                            <i class="glyphicon glyphicon-calendar"></i> Arriving on <%= company.date %> 
+                                            <br>
+                                            <span class="explore"><i class="glyphicon glyphicon-th"></i> <a href="#">Package: <%= company.package %> lpa </a></span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="word-wrap: break-word; color: white"><%= company.description %></p>
+                        </div> 
+                    </div>
+        
+                </div>
+            </div>
+
+        <% end %>
+            
+            
+        </div>
+        <% end %>
+    </div>
+</header>

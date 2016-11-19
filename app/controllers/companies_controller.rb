@@ -1,12 +1,17 @@
 require 'mini_magick'
 class CompaniesController < ApplicationController
    
+   before_action :set_company, only: [:edit,:update,:like, :show]
+   before_action :require_user, except: [:like]
+   before_action :require_user_likes, only: [:like]
+   before_action :require_same_user, only: [:edit, :update]
+   
    def index
       @companies = Company.paginate(page: params[:page],per_page: 3)
    end
    
    def show
-      @company = Company.find(params[:id])
+      
    end
    
    def new
@@ -15,7 +20,7 @@ class CompaniesController < ApplicationController
    
    def create
       @company = Company.new(company_params)
-      @company.user = User.find(1)
+      @company.user = current_user
       
       if @company.save
          flash[:success] = "Created Successfully!"
@@ -27,11 +32,11 @@ class CompaniesController < ApplicationController
    end
    
    def edit
-      @company = Company.find(params[:id])
+     
    end
    
    def update
-      @company = Company.find(params[:id])
+      
       if @company.update(company_params)
          flash[:success] = "Updated Successfully!"
          redirect_to company_path(@company)
@@ -41,8 +46,8 @@ class CompaniesController < ApplicationController
    end
    
    def like
-      @company = Company.find(params[:id])
-      like = Like.create(like: params[:like], user: User.first, company: @company)
+      
+      like = Like.create(like: params[:like], user: current_user, company: @company)
       if like.valid?
          flash[:success] = "You reviewed this company!"
       else 
@@ -55,4 +60,22 @@ class CompaniesController < ApplicationController
       def company_params
          params.require(:company).permit(:companyname,:date,:location,:package,:description,:picture)
       end
+      
+      def set_company
+        @company = Company.find(params[:id])
+     end
+     
+     def require_same_user
+        if current_user != @company.user
+           flash[:danger] = "You can only edit your own provided company info"
+           redirect_to companies_path
+        end
+     end
+     
+     def require_user_likes
+        if !logged_in?
+           flash[:danger] = "You must be logged in to perform this action!"
+           redirect_to :back
+        end
+     end
 end

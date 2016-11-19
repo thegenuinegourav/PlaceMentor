@@ -31,7 +31,10 @@
                 <% end %>
              
             </div>
-            <%= link_to "Edit this info",edit_company_path(@company), class: "btn btn-danger pull-right" %>
+            
+            <% if logged_in? and (current_user == @company.user) %>
+                <%= link_to "Edit this info",edit_company_path(@company), class: "btn btn-danger pull-right" %>
+             <% end %>
         </div>
         
         <div class="row" style="margin-top: 30px">

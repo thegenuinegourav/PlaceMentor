@@ -6,23 +6,45 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
               
-                <%= link_to "PlaceMentor","", class: "navbar-brand page-scroll" %>
+                <%= link_to "PlaceMentor",home_path, class: "navbar-brand page-scroll" %>
+
             </div>
 
-            <form id="signin" class="navbar-form navbar-right" role="form">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="email" style="border:1px solid #EE4B28" type="email" class="form-control" name="email" value="" placeholder="Email Address">                                        
+            
+            <%= link_to "Login",class: "navbar-brand pull-right dropdown-toggle verticalLine hovering", "data-toggle" => "dropdown", :style=>"margin-right: 1px; color: #F05F40;font-weight:bold" do %>
+            Login <b class="caret"></b>
+            <% end %>
+            
+                <ul id="dropdown-login" class="dropdown-menu pull-right well" style="padding: 5px 10px 0px 10px; margin-right: 25px; background-color: rgba(256, 256, 256, 0);">
+                   <%= form_tag '/home' do %>
+                  <li>
+                    <div class="control-group " style="margin:5px; ">
+                       <i class="glyphicon glyphicon-user myBorderGlyphicons" style="font-size:15px;padding: 5px;color: #F05F40"></i>
+                        <div class="controls myBorder" style="height: 26px; display: inline-block;">
+                           <%= text_field_tag :email %>
                         </div>
-
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="password" style="border:1px solid #EE4B28" type="password" class="form-control" name="password" value="" placeholder="Password">                                        
+                    </div>
+                  </li>
+                  <li>
+                    <div class="control-group" style="margin:5px">
+                        <i class="glyphicon glyphicon-lock myBorderGlyphicons" style="font-size:15px;padding: 5px;color: #F05F40"></i>
+                        <div class="controls myBorder" style="height: 26px;display: inline-block;">
+                           <%= password_field_tag :password %>
                         </div>
+                    </div>
+                  </li>
+     
+                  <li style="margin:5px;">
+                    <%= submit_tag 'Sign in', class: "btn orangebg" %>
+                  </li>
+                   <% end %>
+                </ul>
+                
 
-                        <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-            <!-- /.navbar-collapse -->
+
+
         </div>
         <!-- /.container-fluid -->
     </nav>
+    
+   

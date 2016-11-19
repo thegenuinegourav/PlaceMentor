@@ -12,9 +12,9 @@
 	<div class="row">
 		<div class="row"> 
                     <div class="col-xs-12 col-sm-3 col-md-3">
-                        <a href="#">
-                            <%= image_tag(company.picture.url,size: "250x250", class: "gravatar img-responsive img-box img-thumbnail") if company.picture? %>
-                        </a>
+                        
+                            <%= link_to image_tag(company.picture.url,size: "250x250", class: "gravatar img-responsive img-box img-thumbnail"),company_path(company) if company.picture? %>
+                        
                     </div> 
                     <div class="col-xs-12 col-sm-9 col-md-9">
                         <div class="pull-right" style="margin-right: 7px; color: #FF4500">
@@ -56,7 +56,7 @@
                         <div class="list-group">
                             <div class="list-group-item">
                                 <div class="row-picture">
-                                    <%= gravatar_for company.user, size: 100 %>
+                                    <%= link_to gravatar_for(company.user, size: 100), user_path(company.user)%>
                                 </div>
                                 <div class="row-content">
                                     <div class="list-group-item-heading">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <p style="word-wrap: break-word; color: #55423E" class="well"><%= company.description %></p>
-                        <div align="right" style="margin-right: 5px"><em>Brought to you by <strong><%= link_to company.user.username %></strong></em></div>
+                        <div align="right" style="margin-right: 5px"><em>Brought to you by <strong><%= link_to company.user.username,user_path(company.user) %></strong></em></div>
                         
                     </div> 
         </div>

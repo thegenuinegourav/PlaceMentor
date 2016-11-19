@@ -146,3 +146,42 @@ span.picture {
   min-width: 100%;
   min-height: 100%;
 }
+
+.myBorder {
+    border:1px solid #EE4B28;
+    width: 250px;
+}
+
+.myBorderGlyphicons {
+    border:1px solid #EE4B28;
+}
+
+.orangebg {
+    background-color: #EE4B28;
+    color: white;
+}
+
+.verticalLine {
+    border-left: thin solid #CCCCCC;
+}
+
+
+.nav_item .hovering:hover{
+
+    color:white!important;
+    
+}
+
+.nav_item .dropdown .hovering:hover{
+    color:white!important;
+}
+
+.hovering:hover{
+
+    color:white!important;
+    
+}
+
+
+
+
