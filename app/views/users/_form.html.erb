@@ -13,6 +13,7 @@
          <%= f.label :email %> <%= f.email_field :email %>
          <%= f.label :phoneNumber %>  <%= f.text_field :phone %>
          <%= f.label :password %> <%= f.password_field :password ,rows: 10%>
+         <%= f.label :branch %> <%= f.select :branch_id, Branch.all.collect {|c| [ c.name, c.id ] } %>
          <%= f.submit(@user.new_record? ? 'Register' : 'Edit Profile',class: "btn btn-success") %>
         <% end %>
     </div>

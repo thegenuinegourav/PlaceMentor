@@ -1,7 +1,7 @@
 require 'mini_magick'
 class CompaniesController < ApplicationController
    
-   before_action :set_company, only: [:edit,:update,:like, :show]
+   before_action :set_company, only: [:edit,:update,:like, :show, :user_likes]
    before_action :require_user, except: [:like]
    before_action :require_user_likes, only: [:like]
    before_action :require_same_user, only: [:edit, :update]
@@ -56,9 +56,13 @@ class CompaniesController < ApplicationController
       redirect_to :back
    end
    
+   def user_likes
+      
+   end
+   
    private
       def company_params
-         params.require(:company).permit(:companyname,:date,:location,:package,:description,:picture)
+         params.require(:company).permit(:companyname,:date,:location,:package,:description,:picture,branch_ids: [])
       end
       
       def set_company

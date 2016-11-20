@@ -1,0 +1,65 @@
+div style="padding-top: 50px;">
+    <%= render 'layouts/navigationWithoutLogin' %>
+</div>
+
+<div style="background-image: url('/assets/header.jpg'">
+    
+<div style="padding-top: 30px;"><h2 class="text-center" style="color: white; margin-bottom: 30px">Ratings for <em id="no_decoration"><%= link_to @company.companyname,company_path(@company) %></em></h2></div>
+
+
+<header>
+    <div class="container">
+        <% @company.likes.each do |l|  %>
+        <div class="row well" style="background-color: rgba(245, 245, 245, 0.3);">
+            <div class="col-sm-1 col-sm-offset-1">
+                <%= link_to gravatar_for(l.user, size: 70), user_path(l.user), class: "img-circle" %>
+            </div>
+            <div class="col-sm-2" style="font-size: 30px; margin-top: 12px" id="no_decoration">
+                <%= link_to l.user.username,user_path(l.user) %>
+            </div>
+            <div class="col-sm-5" style="color: #ffd700">
+                <% case l.like  %>
+                                <% when 1...2 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                <% when 2...3 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                <% when 3...4 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                <% when 4...5 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star-empty" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                <% when 5 %>
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="glyphicon glyphicon-star" style="font-size: 60px;"></i>&nbsp;&nbsp;&nbsp;
+                            <% end %>
+            </div>
+            
+            <div class="col-sm-3">
+                <span class="btn btn-warning img-thumbnail" style="font-size: 15px;margin-top: 18px" >Rated: <%= l.like.round(2) %></span>
+            </div>
+           
+        </div>
+        
+        <% end %>
+    <hr>
+    
+    </div>    
+</header>

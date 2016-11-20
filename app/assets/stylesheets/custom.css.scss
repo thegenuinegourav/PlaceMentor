@@ -79,6 +79,7 @@ span.picture {
   text-decoration: none;
 }
 
+
 .rating > a:hover:before,
 .rating > a:hover ~ a:before {
    content: "\2605";
@@ -182,6 +183,16 @@ span.picture {
     
 }
 
+.input_checkbox input {
+    width: auto !important;
+}
 
+#no_decoration a{
+    text-decoration: none;
+    color: white;
+}
 
-
+#no_decoration a:hover{
+    text-decoration: none;
+    color: #FFD700;
+}

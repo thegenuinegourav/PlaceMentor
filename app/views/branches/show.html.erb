@@ -4,9 +4,9 @@
 
 <div style="background-image: url('/assets/header.jpg'">
     
-<div style="padding-top: 50px;"></div>
+<div style="padding-top: 30px;"><h2 class="text-center" style="color: white; margin-bottom: 30px">Companies Recruiting From <%= @branch.name %> Branch</h2></div>
 
-<% @companies.each do |company| %>
+<% @branch.companies.each do |company| %>
 
 <div class="container well">
 	<div class="row">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <p style="word-wrap: break-word; color: #55423E" class="well"><%= company.description %></p>
-                        <% if company.branches.any? %><strong>For <%= render company.branches %> Branch</strong><% end %>
+                        <strong>For <%= render company.branches %> Branch</strong>
                         <div align="right" style="margin-right: 5px"><em>Brought to you by <strong><%= link_to company.user.username,user_path(company.user) %></strong></em></div>
                         
                     </div> 
@@ -83,7 +83,7 @@
 <% end %>
 
 <div class="pagniation-wrapper"> 
-  <%= will_paginate %> 
+  <%= will_paginate @companies %> 
 </div>
 
 <div style="padding-top: 50px;"></div>

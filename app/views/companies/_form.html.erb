@@ -14,6 +14,14 @@
          <%= f.label :location %>  <%= f.text_field :location %>
          <%= f.label :package %>  <%= f.number_field :package, :step => "0.01" %>
          <%= f.label :description %>  <%= f.text_area :description ,rows: 10%>
+         
+         <strong>Branches:</strong>
+            <%= f.collection_check_boxes :branch_ids, Branch.all, :id, :name do |cb| %>
+              <% cb.label(class: "checkbox-inline input_checkbox"){cb.check_box(class: "checkbox") +  cb.text} %>
+            <% end %>
+        <br><br>
+        
+        
         <span class="picture">
             <%= f.file_field :picture,accept: 'image/jpeg,image/png,image/gif' %>
          </span>

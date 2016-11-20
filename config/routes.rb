@@ -7,11 +7,14 @@ Rails.application.routes.draw do
   resources :companies do
     member do
       post 'like'
+      get '/likes', to: 'companies#user_likes'
     end
   end
   
   resources :users, except: [:new,:index]
   get '/register', to: 'users#new'
+  
+  resources :branches, only: [:new, :create, :show]
   
   
 end
