@@ -1,6 +1,8 @@
 class Company < ActiveRecord::Base
     belongs_to :user
-     has_many :likes
+    has_many :likes
+    has_many :company_branches
+    has_many :branches, through: :company_branches
     validates :user_id, presence: true
     validates :companyname, presence: true, length: { minimum: 3 ,maximum: 100 }
     validates :location, presence: true, length: { minimum: 5, maximum: 300 }
