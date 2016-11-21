@@ -42,16 +42,13 @@ If you'd like to request a new functionality, feel free to do so by opening an i
 ###Screenshots
   
   
-![home](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Home.png)  
+![home](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Home.png)____![companies](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Companies.png)  
   
   
-![companies](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Companies.png)  
-  
-  
-![company](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Company.png)  
+![company](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Company.png)____![User](https://github.com/thegenuinegourav/PlaceMentor/blob/master/User.png)  
   
   
 ![NewCompany](https://github.com/thegenuinegourav/PlaceMentor/blob/master/NewCompany.png)  
   
   
-![User](https://github.com/thegenuinegourav/PlaceMentor/blob/master/User.png)
+
