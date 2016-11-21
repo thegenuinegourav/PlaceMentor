@@ -9,10 +9,10 @@
         <% end %>
            <br><br>
         <%= form_for(@company, html: { multipart: true }) do |f| %>
-         <%= f.label :companyName %>  <%= f.text_field :companyname %>
+         <%= f.label :company_Name %>  <%= f.text_field :companyname %>
          <%= f.label :date %>  <%= f.date_select(:date, :order => [:month, :day, :year]) %>
          <%= f.label :location %>  <%= f.text_field :location %>
-         <%= f.label :package %>  <%= f.number_field :package, :step => "0.01" %>
+         <%= f.label :package_in_Lakhs_Per_Annum %>  <%= f.number_field :package, :step => "0.01" %>
          <%= f.label :description %>  <%= f.text_area :description ,rows: 10%>
          
          <strong>Branches:</strong>

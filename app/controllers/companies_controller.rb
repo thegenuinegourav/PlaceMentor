@@ -55,7 +55,7 @@ class CompaniesController < ApplicationController
       else 
          flash[:danger] = "You can only reviewed this company once!"
       end
-      redirect_to :back
+      redirect_to likes_company_path(@company)
    end
    
    def user_likes
