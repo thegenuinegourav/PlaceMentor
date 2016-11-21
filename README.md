@@ -1,5 +1,7 @@
-# PlaceMentor :mortar_board:
-PlaceMentor helps you to get information regarding Oncampus companies visit!  
+![logo](https://github.com/thegenuinegourav/PlaceMentor/blob/master/PlaceMentor.jpg)  
+  
+# PlaceMentor                                  
+:mortar_board: PlaceMentor helps you to get information regarding Oncampus companies visit!  
 Designed for Jamians only  
 PlaceMentor is currently  hosting on [Heroku](http://placementor.herokuapp.com/)  
   
