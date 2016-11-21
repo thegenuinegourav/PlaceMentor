@@ -10,10 +10,11 @@
             </div>
           
             <% if logged_in? %>
-            
+                <% if current_user.admin? %>
                 <div  class="nav_item">
                     <%= link_to "[ New Company Visiting? ]",new_company_path,class: "navbar-brand pull-left verticalLine hovering", :style=> "margin-left: 10px; color: #F05F40;font-weight:bold" %>
                 </div>
+                <% end %>
                 
                 <ul class="nav_item">
                     <li class="dropdown">

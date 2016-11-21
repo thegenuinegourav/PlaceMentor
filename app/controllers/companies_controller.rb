@@ -4,7 +4,9 @@ class CompaniesController < ApplicationController
    before_action :set_company, only: [:edit,:update,:like, :show, :user_likes]
    before_action :require_user, except: [:like]
    before_action :require_user_likes, only: [:like]
+   before_action :require_admin, except: [:index, :show, :like,  :user_likes]
    before_action :require_same_user, only: [:edit, :update]
+  
    
    def index
       @companies = Company.paginate(page: params[:page],per_page: 3)
@@ -82,4 +84,11 @@ class CompaniesController < ApplicationController
            redirect_to :back
         end
      end
+     
+      def require_admin
+        if !current_user.admin?
+            flash[:danger] = "You must be an admin to perform this action!"
+            redirect_to companies_path
+        end
+      end
 end
