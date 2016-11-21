@@ -1,24 +1,53 @@
-
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+# PlaceMentor :mortar_board:
+PlaceMentor helps you to get information regarding Oncampus companies visit!
+Designed for Jamians only
+PlaceMentor is currently  hosting on [Heroku](http://placementor.herokuapp.com/)
 
 
-Welcome to your Rails project on Cloud9 IDE!
+### Technologies used
 
-To get started, just do the following:
+This website uses a number of open source projects to work properly:
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://placementor-thegenuinegourav.c9users.io/).
+* Frontend
+  * HTML/CSS
+  * Bootstrap
+  
+* Backend
+  * Ruby/Rails
+  * AWS
 
-Happy coding!
-The Cloud9 IDE team
+
+### Development
+
+Want to contribute? **:pencil:**
+
+To fix a bug or enhance an existing module, follow these steps:
+
+1. Fork the repo
+2. Create a new branch (`git checkout -b exciting-stuff`)
+3. Make the appropriate changes in the files
+4. Add changes to reflect the changes made
+5. Commit your changes (`git commit -am 'exciting-stuff!!'`)
+6. Push to the branch (`git push origin exciting-stuff`)
+7. Create a Pull Request
+
+### Interested?
+
+If you find a bug (the website couldn't handle the query and / or gave irrelevant results), kindly open an issue [here](https://github.com/thegenuinegourav/PlaceMentor/issues/new) by including your search query and the expected result.
+
+If you'd like to request a new functionality, feel free to do so by opening an issue [here](https://github.com/thegenuinegourav/PlaceMentor/issues/new) including some sample queries and their corresponding results.
+
+###Screenshots
 
 
-## Support & Documentation
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+
+### What next?
+
+ - Write Tests
+ - Add Code Comments
+ - Seems perfect naa!!
+ - Some more code
+ - Check for bugs
+ - Go-Online!!
+
