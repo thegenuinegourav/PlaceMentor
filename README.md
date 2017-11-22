@@ -39,22 +39,26 @@ If you find a bug (the website couldn't handle the query and / or gave irrelevan
   
 If you'd like to request a new functionality, feel free to do so by opening an issue [here](https://github.com/thegenuinegourav/PlaceMentor/issues/new) including some sample queries and their corresponding results.  
   
-###Screenshots
+### Screenshots
   
   
-![home](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Home.png)  
+<img src="screenshots/one.png" width="1000">  
+  
+<img src="screenshots/two.png" width="1000">  
+  
+<img src="screenshots/three.png" width="1000">  
+  
+<img src="screenshots/four.png" width="1000">  
+  
+<img src="screenshots/five.png" width="1000">  
+  
+<img src="screenshots/six.png" width="1000">  
+  
+<img src="screenshots/seven.png" width="1000">  
+  
+<img src="screenshots/eight.png" width="1000">  
   
   
-![companies](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Companies.png)  
-  
-  
-![company](https://github.com/thegenuinegourav/PlaceMentor/blob/master/Company.png)  
-  
-  
-![User](https://github.com/thegenuinegourav/PlaceMentor/blob/master/User.png)  
-  
-  
-![NewCompany](https://github.com/thegenuinegourav/PlaceMentor/blob/master/NewCompany.png)  
   
   
 
